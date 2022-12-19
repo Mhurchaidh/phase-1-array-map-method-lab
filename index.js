@@ -12,5 +12,34 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  /////Used for testing logic, then converting into a map method/////
+  // const tCasedNames = [];
+  // for(let string of tutorials) {
+  //   string = string.split(" ");
+  //   for(let i = 0; i < string.length; i++) {
+  //     string[i] = string[i].charAt(0).toUpperCase() + string[i].slice(1);
+  //   }
+  //   tCasedNames.push(string.join(" "));
+  // }
+  // return tCasedNames;
+  /////
+
+  const casedTitles = tutorials.map(str => {
+    let string = str.split(" ");
+    for(let i = 0; i < string.length; i++) {
+          string[i] = string[i].charAt(0).toUpperCase() + string[i].slice(1);
+        }
+        return string.join(" ");
+  })
+
+  return casedTitles;
 }
+///// Using nested map method() /////
+// const titleCased = () => tutorials.map(tutorial => {
+//   const string = tutorial.split(" ");
+//   const capWords = string.map(word => {
+//     return word.charAt(0).toUpperCase() + word.slice(1);
+//   })
+//   return capWords.join(" ");
+// })
+/////
